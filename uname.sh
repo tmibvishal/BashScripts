@@ -21,7 +21,7 @@ if [[ ! "$file" = *.txt ]]; then
     exit -1
 fi
 
-cat $file | while read line; do
+{ cat $file; echo ''; } | while read line; do
     IFS=':' read -r -a array <<< "$line"
     if [ "${array[0]}" = "$username" ]; then
         echo "${array[4]}"
