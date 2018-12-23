@@ -17,4 +17,4 @@ if [ ! -d $directory ]; then
     exit 1
 fi
 
-echo "$(find $directory -name *$extension | wc -l)"
+echo "$(find $directory -maxdepth 1 -name *$extension | wc -l)"
