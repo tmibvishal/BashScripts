@@ -4,7 +4,7 @@
 # in the given directory that
 # have the given file extension
 
-if [ $# -ne 2 ]; then
+if ! ([ $# -eq 1 ] || [ $# -eq 2 ]) ; then
     echo "usage: $0 directory extension" >&2;
     exit 1
 fi
@@ -17,4 +17,8 @@ if [ ! -d $directory ]; then
     exit 1
 fi
 
-echo "$(find $directory -maxdepth 1 -name *$extension | wc -l)"
+if [ "$extension" = "" ]; then
+    echo "$(ls $directory | wc -l)"
+else
+    echo "$(find $directory -maxdepth 1 -name *$extension | wc -l)"
+fi
