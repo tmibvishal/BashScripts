@@ -15,7 +15,6 @@ elif [ ! -d $2 ]; then
     exit -1
 fi
 
-
 checkFiles1in2(){
     #check files of $1 in $2
     dir1=$1
@@ -24,7 +23,8 @@ checkFiles1in2(){
     for line in $tempFile1; do
         text="${line#$dir1}"
         if [ ! -e "$dir2$text" ]; then
-            echo "${line#$dir1}"
+            echo "${text#/}"
+            cp -R $dir1$text $dir2$text
         fi
     done
 
