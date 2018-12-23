@@ -26,8 +26,11 @@ example:-
      ‘-- subdir - 1.txt
      - 2.txt
      - 3.txt
+     
      aman@aman:/tmp/tempdir> ./countFiles.sh /tmp/tempdir 8
+     
      aman@aman:/tmp/tempdir> ./countFiles.sh /tmp/tempdir .pdf 3 
+     
      aman@aman:/tmp/tempdir> ./countFiles.sh /tmp/tempdir .txt 5 
 
 # usage of uname.sh
@@ -101,6 +104,7 @@ example:-
      - 5.txt
      ‘-- subdir - 2.txt
      - 3.txt
+
      aman@aman:/dir2> tree . - 1.pdf
      - 2.pdf
      - 2.txt
@@ -108,8 +112,12 @@ example:-
      - 5.txt
      ‘-- subdir - 1.txt
      - 3.txt
-     aman@aman:> ./backup.sh /dir1 /dir2 Files copied from /dir1 to /dir2 are: 1.txt
+
+     aman@aman:> ./backup.sh /dir1 /dir2 Files copied from /dir1 to /dir2 are: 
+     1.txt
      4.txt
-     subdir/2.txt Files copied from /dir2 to /dir1 are: 1.pdf
+     subdir/2.txt 
+     Files copied from /dir2 to /dir1 are: 
+     1.pdf
      2.pdf
      subdir/1.txt 
