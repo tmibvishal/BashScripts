@@ -13,5 +13,8 @@ directory=$1;
 extension=$2;
 
 if [ ! -d $directory ]; then
-    echo "$directory is not a directory"
+    echo "$directory is not a directory" >&2
+    exit 1
 fi
+
+echo "$(find $directory -name *$extension | wc -l)"
