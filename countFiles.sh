@@ -24,3 +24,5 @@ if [ "$extension" = "" ]; then
 else
     echo "$(find $directory -maxdepth 1 -name *$extension | wc -l)"
 fi
+
+exit 0
