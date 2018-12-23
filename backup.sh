@@ -17,12 +17,11 @@ fi
 
 
 checkFiles1in2(){
-    #check file of $1 in $2
+    #check files of $1 in $2
     dir1=$1
     dir2=$2
     tempFile1="$(find $dir1 -type f | sort) "
     for line in $tempFile1; do
-        # echo "${line#$dir1}"
         text="${line#$dir1}"
         if [ ! -e "$dir2$text" ]; then
             echo "${line#$dir1}"
@@ -36,3 +35,5 @@ echo "Files copied from /dir1 to /dir2 are:"
 checkFiles1in2 $1 $2
 echo "Files copied from /dir2 to /dir1 are:"
 checkFiles1in2 $2 $1
+
+exit 0
